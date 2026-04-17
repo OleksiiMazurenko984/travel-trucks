@@ -1,0 +1,33 @@
+.header {
+  border: 1px solid var(--gray-light);
+  background-color: var(--inputs);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  min-height: 72px;
+  padding: 0 64px;
+}
+
+.logo {
+  display: inline-flex;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin: 0 auto;
+}
+
+.link {
+  color: var(--main);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--green-hover);
+}
