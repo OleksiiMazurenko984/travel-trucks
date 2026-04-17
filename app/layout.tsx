@@ -17,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <TanStackProvider>
-        <body className={inter.variable}>
+      <body className={inter.variable}>
+        <TanStackProvider>
           <Header />
           <main>{children}</main>
-        </body>{' '}
-      </TanStackProvider>
+        </TanStackProvider>
+      </body>
     </html>
   );
 }
