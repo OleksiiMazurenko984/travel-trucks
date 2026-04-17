@@ -1,6 +1,14 @@
 import './globals.css';
 import Header from '@/components/Header/Header';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export default function RootLayout({
   children,
@@ -10,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <TanStackProvider>
-        <body>
+        <body className={inter.variable}>
           <Header />
           <main>{children}</main>
         </body>{' '}
