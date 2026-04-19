@@ -1,0 +1,163 @@
+.panel {
+  border-radius: 20px;
+  background-color: var(--inputs);
+  width: 360px;
+  height: 840px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  box-sizing: border-box;
+}
+
+.locationGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 312px;
+  gap: 8px;
+}
+
+.locationLabel {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--gray);
+}
+
+.locationInputWrap {
+  border-radius: 12px;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 312px;
+  height: 56px;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.locationIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--main);
+  flex-shrink: 0;
+}
+
+.locationInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  color: var(--main);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.locationInput::placeholder {
+  color: var(--text);
+}
+
+.filterSection {
+  width: 153px;
+  height: 488px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.filterTitle {
+  margin: 0;
+  color: var(--main);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.333;
+}
+
+.fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend {
+  margin-bottom: 8;
+  padding: 0;
+  color: var(--gray);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optionLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--main);
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.optionText {
+  text-transform: capitalize;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--grey-green);
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 312px;
+}
+
+.searchButton,
+.clearButton {
+  border-radius: 200px;
+  width: 312px;
+  height: 56px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.searchButton {
+  border: none;
+  background-color: var(--grey-green);
+  color: var(--white);
+}
+
+.searchButton:hover,
+.searchButton:focus {
+  background-color: var(--green-hover);
+}
+
+.clearButton {
+  border: 1px solid var(--gray-light);
+  background-color: var(--white);
+  color: var(--main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
