@@ -11,8 +11,8 @@ export default function FilterLayout({
 }: Readonly<FilterLayoutProps>) {
   return (
     <div className={css.container}>
-      <div>{filters}</div>
-      <div>{children}</div>
+      <div className={css.filters}>{filters}</div>
+      <div className={css.trucks}>{children}</div>
     </div>
   );
 }

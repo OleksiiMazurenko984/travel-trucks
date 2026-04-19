@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 65px;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 48px 64px;
+}
+
+.filters {
+  width: 360px;
+}
+
+.trucks {
+  display: flex;
+  width: 888px;
+}

@@ -1,0 +1,163 @@
+.section {
+  display: flex;
+  width: 888px;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.status {
+  margin: 0;
+  font-size: 18px;
+  color: var(--main);
+}
+
+.list {
+  display: flex;
+  width: 888px;
+  flex-direction: column;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  width: 888px;
+  gap: 24px;
+  padding: 24px;
+  max-height: 312px;
+  border-radius: 16px;
+  background-color: var(--inputs);
+}
+
+.image {
+  width: 219px;
+  height: 240px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  width: 524px;
+  height: 264px;
+  flex-direction: column;
+}
+
+.headingRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.name,
+.price {
+  margin: 0;
+  color: var(--main);
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33333;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.33333;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 0;
+  color: var(--main);
+  font-size: 16px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.ratingIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--rating);
+}
+
+.description {
+  margin: 24px 0 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  gap: 6px;
+  border-radius: 100px;
+  background-color: var(--badges);
+  color: var(--main);
+  text-transform: capitalize;
+}
+
+.tagIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 173px;
+  height: 56px;
+  box-sizing: border-box;
+  border-radius: 200px;
+  background-color: var(--grey-green);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 24px;
+}
+
+.button:hover {
+  background-color: var(--green-hover);
+}
+
+.loadMore {
+  align-self: center;
+  min-width: 145px;
+  height: 56px;
+  border: 1px solid var(--gray-light);
+  border-radius: 100px;
+  background-color: var(--white);
+  color: var(--main);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.loadMore:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
