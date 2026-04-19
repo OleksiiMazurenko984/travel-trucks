@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 import type {
-  Camper,
+  CamperListItem,
   CamperEngine,
   CamperForm,
   CamperTransmission,
+  CamperDetails,
 } from '@/types/campers';
 import type { CamperReview } from '@/types/reviews';
 
@@ -12,36 +13,32 @@ const api = axios.create({
   baseURL: 'https://campers-api.goit.study',
 });
 
-type CampersListResponse = {
-  items: Camper[];
+interface CampersListResponse {
+  campers: CamperListItem[];
   total: number;
   page: number;
   perPage: number;
   totalPages: number;
-};
+}
 
-type GetCampersParams = {
+interface GetCampersParams {
   page?: number;
   perPage?: number;
   location?: string;
   form?: CamperForm;
   transmission?: CamperTransmission;
   engine?: CamperEngine;
-};
+}
 
-type CamperFiltersResponse = {
+interface CamperFiltersResponse {
   forms: CamperForm[];
   transmissions: CamperTransmission[];
   engines: CamperEngine[];
-};
+}
 
-type CreateBookingRequestResponse = {
-  id: string;
-  camperId: string;
-  name: string;
-  email: string;
-  createdAt: string;
-};
+interface CreateBookingRequestResponse {
+  message: string;
+}
 
 export const getCampers = async (params: GetCampersParams = {}) => {
   const { data } = await api.get<CampersListResponse>('/campers', { params });
@@ -54,7 +51,7 @@ export const getCamperFilters = async () => {
 };
 
 export const getCamperById = async (camperId: string) => {
-  const { data } = await api.get<Camper>(`/campers/${camperId}`);
+  const { data } = await api.get<CamperDetails>(`/campers/${camperId}`);
   return data;
 };
 
