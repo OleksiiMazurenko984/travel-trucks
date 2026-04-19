@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--badges);
   background-color: var(--inputs);
   display: flex;
   align-items: center;
