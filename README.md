@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Travel Trucks
 
-## Getting Started
+## Назва проєкту
 
-First, run the development server:
+**Travel Trucks** — вебзастосунок для пошуку та перегляду кемперів для
+подорожей.
+
+## Про проєкт і яку задачу він вирішує
+
+Проєкт допомагає користувачу швидко знайти кемпер за потрібними параметрами та
+переглянути детальну інформацію про обрану модель в одному інтерфейсі.
+
+Основна задача — спростити підбір кемпера за фільтрами (локація, тип кузова,
+двигун, трансмісія), а також дати можливість переглянути повний опис,
+характеристики та відгуки.
+
+## Основні функції
+
+- головна сторінка з hero-блоком і переходом до каталогу;
+- каталог кемперів із пагінацією «Load more»;
+- фільтрація за:
+  - містом (Location);
+  - формою кемпера (Camper form);
+  - типом двигуна (Engine);
+  - трансмісією (Transmission);
+- скидання активних фільтрів;
+- сторінка деталей кемпера:
+  - розширений опис;
+  - галерея/зображення;
+  - блок відгуків;
+  - форма бронювання.
+
+## Використані технології
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **CSS Modules**
+- **TanStack Query** (кешування та запити)
+- **Axios** (HTTP-запити)
+- **React Icons**
+- **React Toastify**
+- **Swiper**
+
+## Як встановити та запустити проєкт локально
+
+### 1) Передумови
+
+- Встановлений **Node.js** (рекомендовано LTS-версію)
+- **npm**
+
+### 2) Встановлення залежностей
+
+```bash
+npm install
+```
+
+### 3) Запуск у режимі розробки
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 4) Збірка production-версії
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5) Запуск production-серверу
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 6) Перевірка коду лінтером
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Приклад структури проєкту
 
-## Deploy on Vercel
+- `app/` — маршрути та сторінки застосунку (App Router)
+- `components/` — перевикористовувані UI-компоненти
+- `lib/api.ts` — функції для роботи з API
+- `types/` — TypeScript-типи сутностей
+- `public/` — статичні ресурси
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Автор
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Автор:** Мазуренко Олексій
