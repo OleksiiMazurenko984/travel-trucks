@@ -16,6 +16,14 @@ type CampersListProps = {
   filters: CamperCatalogFilters;
 };
 
+const formatTagLabel = (value: string) =>
+  value
+    .split('_')
+    .map(
+      word => word.charAt(0).toUpperCase() + word.slice(1).toLocaleLowerCase()
+    )
+    .join(' ');
+
 export default function CampersList({ perPage, filters }: CampersListProps) {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
     useInfiniteQuery({
@@ -76,17 +84,17 @@ export default function CampersList({ perPage, filters }: CampersListProps) {
               <div className={css.tags}>
                 <span className={css.tag}>
                   <LuFuel className={css.tagIcon} />
-                  {camper.engine}
+                  {formatTagLabel(camper.engine)}
                 </span>
 
                 <span className={css.tag}>
                   <TbManualGearbox className={css.tagIcon} />
-                  {camper.transmission}
+                  {formatTagLabel(camper.transmission)}
                 </span>
 
                 <span className={css.tag}>
                   <FaVanShuttle className={css.tagIcon} />
-                  {camper.form}
+                  {formatTagLabel(camper.form)}
                 </span>
               </div>
 
