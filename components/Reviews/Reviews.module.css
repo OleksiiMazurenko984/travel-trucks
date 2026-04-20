@@ -1,18 +1,30 @@
 .section {
   margin-top: 88px;
-  width: 623px;
+  width: 1312px;
 }
 
 .title {
   margin: 0;
+  margin-bottom: 24px;
   color: var(--main);
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33333;
 }
 
+.contentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.reviewsColumn {
+  width: 623px;
+  margin-right: 48px;
+}
+
 .list {
-  margin-top: 24px;
+  margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -100,7 +112,6 @@
 }
 
 .status {
-  margin: 24px 0 0;
   color: var(--text);
   font-size: 18px;
 }
