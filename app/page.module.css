@@ -9,7 +9,6 @@
 }
 
 .overlay {
-  align-items: center;
   background: rgb(0 0 0 / 20%);
   display: flex;
   height: 100%;
@@ -17,6 +16,7 @@
 }
 
 .content {
+  margin-top: 195px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -51,6 +51,7 @@
   line-height: 1.5;
   text-decoration: none;
   height: 56px;
+  margin-top: 24px;
   max-width: 173px;
 }
 
