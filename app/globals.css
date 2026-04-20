@@ -1,3 +1,5 @@
+@import 'modern-normalize/modern-normalize.css';
+
 :root {
   --main: #101828;
   --text: #475467;
