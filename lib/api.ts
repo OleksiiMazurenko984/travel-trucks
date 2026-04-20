@@ -2,10 +2,9 @@ import axios from 'axios';
 
 import type {
   CamperListItem,
-  CamperEngine,
-  CamperForm,
-  CamperTransmission,
   CamperDetails,
+  CamperCatalogFilters,
+  CamperFiltersResponse,
 } from '@/types/campers';
 import type { CamperReview } from '@/types/reviews';
 
@@ -21,19 +20,9 @@ interface CampersListResponse {
   totalPages: number;
 }
 
-interface GetCampersParams {
+interface GetCampersParams extends CamperCatalogFilters {
   page?: number;
   perPage?: number;
-  location?: string;
-  form?: CamperForm;
-  transmission?: CamperTransmission;
-  engine?: CamperEngine;
-}
-
-interface CamperFiltersResponse {
-  forms: CamperForm[];
-  transmissions: CamperTransmission[];
-  engines: CamperEngine[];
 }
 
 interface CreateBookingRequestResponse {

@@ -9,17 +9,19 @@ import { LuFuel } from 'react-icons/lu';
 import { TbManualGearbox } from 'react-icons/tb';
 import { FiMap } from 'react-icons/fi';
 import css from './CampersList.module.css';
+import type { CamperCatalogFilters } from '@/types/campers';
 
 type CampersListProps = {
   perPage: number;
+  filters: CamperCatalogFilters;
 };
 
-export default function CampersList({ perPage }: CampersListProps) {
+export default function CampersList({ perPage, filters }: CampersListProps) {
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
     useInfiniteQuery({
-      queryKey: ['campers', perPage],
+      queryKey: ['campers', perPage, filters],
       queryFn: ({ pageParam }) =>
-        getCampers({ page: pageParam as number, perPage }),
+        getCampers({ page: pageParam as number, perPage, ...filters }),
       initialPageParam: 1,
       getNextPageParam: lastPage =>
         lastPage.page < lastPage.totalPages ? lastPage.page + 1 : undefined,

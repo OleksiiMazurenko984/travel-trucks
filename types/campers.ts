@@ -67,3 +67,16 @@ export interface CamperDetails {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface CamperCatalogFilters {
+  location?: string;
+  form?: CamperForm;
+  transmission?: CamperTransmission;
+  engine?: CamperEngine;
+}
+
+export interface CamperFiltersResponse {
+  forms: CamperForm[];
+  transmissions: CamperTransmission[];
+  engines: CamperEngine[];
+}
