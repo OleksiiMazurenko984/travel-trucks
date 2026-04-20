@@ -10,6 +10,7 @@ import { FreeMode, Thumbs } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
 import { getCamperById } from '@/lib/api';
+import Reviews from '@/components/Reviews/Reviews';
 import css from './CamperDetails.module.css';
 import 'swiper/css';
 
@@ -122,6 +123,8 @@ export default function CamperDetails() {
               </Swiper>
             </>
           )}
+
+          <Reviews camperId={camperId} />
         </div>
 
         <div className={css.infoColumn}>
