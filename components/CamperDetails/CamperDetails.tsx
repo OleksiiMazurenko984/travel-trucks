@@ -1,12 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { FaStar } from 'react-icons/fa6';
 import { FiMap } from 'react-icons/fi';
+import { FreeMode, Thumbs } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper';
 import { getCamperById } from '@/lib/api';
 import css from './CamperDetails.module.css';
+import 'swiper/css';
+
 import type {
   CamperAmenity,
   CamperDetails as CamperDetailsType,
@@ -37,6 +43,7 @@ const getFeatureTags = ({
 };
 
 export default function CamperDetails() {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const { camperId } = useParams<{ camperId: string }>();
 
   const { data, isLoading, error } = useQuery({
@@ -63,31 +70,58 @@ export default function CamperDetails() {
     <section className={css.page}>
       <div className={css.content}>
         <div className={css.galleryColumn}>
-          {data.gallery[0] && (
-            <Image
-              className={css.mainImage}
-              src={data.gallery[0].original}
-              alt={data.name}
-              width={638}
-              height={505}
-              unoptimized
-            />
-          )}
+          {data.gallery.length > 0 && (
+            <>
+              <Swiper
+                modules={[Thumbs]}
+                className={css.mainSlider}
+                thumbs={{
+                  swiper:
+                    thumbsSwiper && !thumbsSwiper.destroyed
+                      ? thumbsSwiper
+                      : null,
+                }}
+                spaceBetween={16}
+              >
+                {data.gallery.map(item => (
+                  <SwiperSlide key={item.id}>
+                    <Image
+                      className={css.mainImage}
+                      src={item.original}
+                      alt={`${data.name} view ${item.order + 1}`}
+                      width={638}
+                      height={505}
+                      unoptimized
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-          <ul className={css.thumbsList}>
-            {data.gallery.slice(0, 4).map(item => (
-              <li className={css.thumbItem} key={item.id}>
-                <Image
-                  className={css.thumbImage}
-                  src={item.thumb}
-                  alt={`${data.name} view ${item.order + 1}`}
-                  width={136}
-                  height={144}
-                  unoptimized
-                />
-              </li>
-            ))}
-          </ul>
+              <Swiper
+                modules={[FreeMode, Thumbs]}
+                onSwiper={setThumbsSwiper}
+                className={css.thumbsSlider}
+                spaceBetween={32}
+                slidesPerView={4}
+                freeMode
+                watchSlidesProgress
+                slideToClickedSlide
+              >
+                {data.gallery.map(item => (
+                  <SwiperSlide className={css.thumbSlide} key={item.id}>
+                    <Image
+                      className={css.thumbImage}
+                      src={item.thumb}
+                      alt={`${data.name} view ${item.order + 1}`}
+                      width={136}
+                      height={144}
+                      unoptimized
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </>
+          )}
         </div>
 
         <div className={css.infoColumn}>

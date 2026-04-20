@@ -22,35 +22,42 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 638px;
+}
+
+.mainSlider {
+  width: 638px;
 }
 
 .mainImage {
   width: 638px;
   height: 505px;
-  border-radius: 17px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
-.thumbsList {
-  display: flex;
-  gap: 16px;
-  list-style: none;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+.thumbsSlider {
+  width: 638px;
 }
 
-.thumbItem {
+.thumbSlide {
   width: 136px;
   height: 144px;
-  overflow: hidden;
+  cursor: pointer;
 }
 
 .thumbImage {
+  display: block;
   width: 136px;
   height: 144px;
+  border: 3px solid transparent;
   border-radius: 16px;
+  box-sizing: border-box;
   object-fit: cover;
+}
+
+.thumbsSlider :global(.swiper-slide-thumb-active) .thumbImage {
+  border-color: #829b91;
 }
 
 .infoColumn {
