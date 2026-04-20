@@ -91,6 +91,8 @@ export default function BookingForm({ camperId }: BookingFormProps) {
           >
             {isPending ? 'Sending...' : 'Send'}
           </button>
+
+          {isPending && <p className={css.subtitle}>Loading...</p>}
         </form>
       </div>
     </div>
