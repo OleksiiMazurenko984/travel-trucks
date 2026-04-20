@@ -77,8 +77,11 @@ export default function CampersList({ perPage, filters }: CampersListProps) {
               </p>
 
               <p className={css.description}>
-                Embrace simplicity and freedom with the {camper.name} camper
-                truck...
+                {camper.description
+                  ? camper.description.length > 60
+                    ? `${camper.description.slice(0, 60)}...`
+                    : camper.description
+                  : ''}
               </p>
 
               <div className={css.tags}>
