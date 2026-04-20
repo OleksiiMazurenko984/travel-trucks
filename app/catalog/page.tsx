@@ -12,9 +12,19 @@ import type {
   CamperForm,
   CamperTransmission,
 } from '@/types/campers';
+import type { Metadata } from 'next';
 import css from './page.module.css';
 
 const PER_PAGE = 4;
+
+export const metadata: Metadata = {
+  title: 'Catalog',
+  description:
+    'Browse all available campers, apply filters, and find the best vehicle for your trip.',
+  alternates: {
+    canonical: '/catalog',
+  },
+};
 
 interface CatalogPageProps {
   searchParams?: Promise<{

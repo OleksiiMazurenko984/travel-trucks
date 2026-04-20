@@ -20,6 +20,9 @@ export async function generateMetadata({
   return {
     title: `${camper.name} | TravelTrucks`,
     description: camper.description,
+    alternates: {
+      canonical: `/catalog/${camperId}`,
+    },
   };
 }
 
