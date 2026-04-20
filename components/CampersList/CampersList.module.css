@@ -116,7 +116,7 @@
   padding: 0 18px;
   gap: 6px;
   border-radius: 100px;
-  background-color: #eaecef;
+  background-color: var(--gray-dark);
   color: var(--main);
   text-transform: capitalize;
 }
