@@ -41,6 +41,10 @@ export default function CampersList({ perPage, filters }: CampersListProps) {
     return <p className={css.status}>Loading campers...</p>;
   }
 
+  if (campers.length === 0) {
+    return <p className={css.status}>No trucks found for your filters</p>;
+  }
+
   return (
     <section className={css.section}>
       <ul className={css.list}>
