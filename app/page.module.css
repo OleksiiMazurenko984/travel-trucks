@@ -53,6 +53,7 @@
   height: 56px;
   margin-top: 24px;
   max-width: 173px;
+  transition: background-color 250ms ease;
 }
 
 .view:hover,
