@@ -1,0 +1,159 @@
+.page {
+  padding: 48px 64px 64px;
+}
+
+.status {
+  margin: 48px 64px;
+  color: var(--main);
+  font-size: 18px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.galleryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mainImage {
+  width: 638px;
+  height: 505px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.thumbsList {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.thumbItem {
+  width: 136px;
+  height: 144px;
+}
+
+.thumbImage {
+  width: 136px;
+  height: 144px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.infoColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 650px;
+}
+
+.mainCard,
+.detailsCard {
+  border-radius: 16px;
+  padding: 24px;
+  background-color: var(--inputs);
+}
+
+.name {
+  margin: 0;
+  color: var(--main);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 12px 0 0;
+  color: var(--main);
+  font-size: 24px;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratingIcon {
+  color: var(--rating);
+}
+
+.price {
+  margin: 24px 0 0;
+  color: var(--main);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.description {
+  margin: 24px 0 0;
+  color: var(--text);
+  font-size: 32px;
+  line-height: 1.333;
+}
+
+.detailsTitle {
+  margin: 0;
+  color: var(--main);
+  font-size: 40px;
+  line-height: 1;
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 100px;
+  background-color: #eaecef;
+  color: var(--main);
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.specList {
+  margin: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-light);
+}
+
+.specRow {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--main);
+  font-size: 24px;
+  line-height: 1.333;
+}
+
+.specRow + .specRow {
+  margin-top: 16px;
+}
+
+.specRow dt,
+.specRow dd {
+  margin: 0;
+}
