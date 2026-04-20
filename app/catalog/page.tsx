@@ -1,5 +1,6 @@
-import { getCampers } from '@/lib/api';
+import { getCamperFilters, getCampers } from '@/lib/api';
 import CampersList from '@/components/CampersList/CampersList';
+import Filters from '@/components/Filters/Filters';
 import {
   dehydrate,
   HydrationBoundary,
@@ -11,6 +12,7 @@ import type {
   CamperForm,
   CamperTransmission,
 } from '@/types/campers';
+import css from './page.module.css';
 
 const PER_PAGE = 4;
 
@@ -33,6 +35,8 @@ export default async function CatalogPage({ searchParams }: CatalogPageProps) {
   };
   const queryClient = new QueryClient();
 
+  const filterOptionsPromise = getCamperFilters();
+
   await queryClient.prefetchInfiniteQuery({
     queryKey: ['campers', PER_PAGE, filters],
     queryFn: ({ pageParam }) =>
@@ -44,9 +48,18 @@ export default async function CatalogPage({ searchParams }: CatalogPageProps) {
     initialPageParam: 1,
   });
 
+  const filterOptions = await filterOptionsPromise;
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CampersList perPage={PER_PAGE} filters={filters} />
+      <div className={css.container}>
+        <div className={css.filters}>
+          <Filters options={filterOptions} />
+        </div>
+
+        <div className={css.trucks}>
+          <CampersList perPage={PER_PAGE} filters={filters} />
+        </div>
+      </div>
     </HydrationBoundary>
   );
 }
