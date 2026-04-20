@@ -1,11 +1,14 @@
 .page {
-  padding: 48px 64px 64px;
+  width: 1312px;
+  margin: 0 auto;
+  padding: 48px 64px;
 }
 
 .status {
-  margin: 48px 64px;
+  margin: 48px auto;
   color: var(--main);
   font-size: 18px;
+  width: 1312px;
 }
 
 .content {
@@ -24,7 +27,7 @@
 .mainImage {
   width: 638px;
   height: 505px;
-  border-radius: 10px;
+  border-radius: 17px;
   object-fit: cover;
 }
 
@@ -32,6 +35,7 @@
   display: flex;
   gap: 16px;
   list-style: none;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
@@ -39,19 +43,20 @@
 .thumbItem {
   width: 136px;
   height: 144px;
+  overflow: hidden;
 }
 
 .thumbImage {
   width: 136px;
   height: 144px;
-  border-radius: 10px;
+  border-radius: 16px;
   object-fit: cover;
 }
 
 .infoColumn {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   width: 650px;
 }
 
@@ -60,29 +65,32 @@
   border-radius: 16px;
   padding: 24px;
   background-color: var(--inputs);
+  width: 650px;
 }
 
 .name {
   margin: 0;
   color: var(--main);
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.33333;
 }
 
 .meta {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: var(--main);
-  font-size: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .metaItem {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 
 .ratingIcon {
@@ -90,24 +98,24 @@
 }
 
 .price {
-  margin: 24px 0 0;
+  margin: 16px 0 0;
   color: var(--main);
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.333;
 }
 
 .description {
   margin: 24px 0 0;
   color: var(--text);
-  font-size: 32px;
-  line-height: 1.333;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .detailsTitle {
   margin: 0;
   color: var(--main);
-  font-size: 40px;
+  font-size: 24px;
   line-height: 1;
 }
 
@@ -116,7 +124,7 @@
   flex-wrap: wrap;
   gap: 8px;
   list-style: none;
-  margin: 24px 0;
+  margin: 24px 0 16px;
   padding: 0;
 }
 
@@ -129,13 +137,14 @@
   border-radius: 100px;
   background-color: #eaecef;
   color: var(--main);
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 1.5;
   text-transform: capitalize;
 }
 
 .specList {
   margin: 0;
-  padding-top: 24px;
+  padding-top: 16px;
   border-top: 1px solid var(--gray-light);
 }
 
@@ -145,12 +154,12 @@
   justify-content: space-between;
   gap: 24px;
   color: var(--main);
-  font-size: 24px;
+  font-size: 16px;
   line-height: 1.333;
 }
 
 .specRow + .specRow {
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .specRow dt,
