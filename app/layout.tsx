@@ -1,6 +1,7 @@
 import './globals.css';
 import Header from '@/components/Header/Header';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
+import ToastProvider from '@/components/ToastProvider/ToastProvider';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
@@ -21,6 +22,7 @@ export default function RootLayout({
         <TanStackProvider>
           <Header />
           <main>{children}</main>
+          <ToastProvider />
         </TanStackProvider>
       </body>
     </html>
